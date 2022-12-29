@@ -1,0 +1,29 @@
+/* style.css */
+a {
+  color: red;
+}
+
+input {
+  padding: 5px;
+}
+
+.small {
+  font-size: small;
+  color: #666;
+}
+
+.container {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.post-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-list {
+  padding: 0;
+}

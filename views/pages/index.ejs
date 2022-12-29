@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <%- include('./nav') %> 
+    <h1>홈페이지</h1>
+    <b class="small">Total Posts: <%= posts.length  %>  </b>
+    <ul class="post-list">
+      <% for(let i = 0; i < posts.length; i++) {  %>
+        <li>
+          <div>
+            <p class="small">작성일: <%= posts[i].createdAt.toLocaleString() %></p>
+            <h3><%= posts[i].post %></h3>
+          </div>
+          <form 
+            action="/delete/<%= posts[i].id %>" 
+            method="post"
+            onsubmit="let result = confirm('삭제하시겠습니까?');if(!result) return false;"
+          >
+            <button type="submit">삭제</button>
+          </form>
+        </li> 
+      <% } %>
+    </ul>
+    <form action="/create" method="post">
+      <input type="text" name="post" placeholder="글 입력">
+      <button type="submit">글쓰기</button>
+    </form>
+  </div><!-- container -->
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+-- DROP TABLE Userinfos
+-- INSERT into Userinfos (name, age, sex, contact, createdAt, updatedAt) VALUES ("홍길동", 20, "남", "서울", "2022-12-28", "2022-12-28");
