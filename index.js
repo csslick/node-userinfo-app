@@ -97,19 +97,15 @@ app.post('/deleteuser/:id', async function(req, res){
 // 검색
 app.get('/search', async function(req, res) {
   console.log(req.query.search);
-  const userinfos = await Userinfos.findOne({
+  const userinfos = await Userinfos.findAll({
+    // 이름 
     where: { name: req.query.search }
   });
 
-  if(userinfos !== null) {
+  // 검색결과가 있으면
     res.render('pages/userinfo.ejs', { 
-      userinfos: [userinfos] 
+      userinfos
     }) 
-  } else {
-    res.render('pages/userinfo.ejs', { 
-      userinfos: [] 
-    }) 
-  }
 })  // search
 
 

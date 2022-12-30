@@ -11,7 +11,7 @@
 <body>
   <div class="container my-4">
     <%- include('./nav')  %> 
-    <h1 class="mt-4">고객정보관리</h1>
+    <h1 class="mt-4">고객정보관리</h1>2022-1230-11:37
     <!-- 검색창 -->
     <form action="/search" method="get">
       <div class="input-group mb-3">
@@ -30,6 +30,7 @@
           <th>contact</th>
           <th></th>
         </tr>
+        <!-- 유저정보가 있으면 출력 -->
         <% if(locals.userinfos) { %>
           <% for(let userinfo of userinfos) {  %>
             <tr>
@@ -50,12 +51,14 @@
             </tr> 
           <% } %>
         <%}%> <!-- if -->
+        <!-- 고객자료가 없으면 표시 -->
         <% if(userinfos.length == 0) {%> 
           <p>요청한 고객을 찾을 수 업습니다.</p>
         <% } %>   
       </table>
 
     <h3 class="mt-5">정보입력</h3>
+    <!-- 입력양식을 검증 추가: 필수입력, 전화번호 -->
     <form action="/createuser" method="post" class="mt-3">
       <div>
         <input type="text" name="name" placeholder="이름 입력" required class="form-control mb-2 autofocus">
@@ -66,6 +69,7 @@
           <input type="radio" class="form-check-input" id="female" name="sex" value="여자"> 여자
           <label class="form-check-label" for="female"></label>
         </div>
+        <!-- pattern 정규표현식 전화번호 패턴 -->
         <input type="text" name="contact" placeholder="연락처" class="form-control mt-2">
       </div>
       <button type="submit" class="btn btn-primary mt-4">추가</button>
