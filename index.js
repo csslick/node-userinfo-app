@@ -108,6 +108,14 @@ app.get('/search', async function(req, res) {
     }) 
 })  // search
 
+// 수정
+app.post('/updateuser/:id', async function(req, res) {
+  console.log(req.params.id)
+  await Userinfos.update({
+    where: { id: req.params.id }
+  })
+  res.redirect('/')
+})
 
 const port = 3001;
 app.listen(port, () => {

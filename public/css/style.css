@@ -27,3 +27,14 @@ input {
 .post-list {
   padding: 0;
 }
+
+.update-form, .create-form {
+  display: none;
+} 
+
+.create-form.show {
+  display: block;
+}
+.update-form.show {
+  display: block;
+}
