@@ -31,8 +31,8 @@
           <th></th>
         </tr>
         <!-- 유저정보가 있으면 출력 -->
-        <% if(locals.userinfos) { %>
-          <% for(let userinfo of userinfos) {  %>
+        <% if(locals.userinfos) { 
+            for(let userinfo of userinfos) {  %>
             <tr>
               <td><%= userinfo.id %></td>
               <td><%= userinfo.name %></td>
@@ -69,17 +69,17 @@
                     <!-- pattern 정규표현식 전화번호 패턴 -->
                     <input type="text" name="contact" placeholder="<%= userinfos.contact %>" class="form-control mt-2">
                   </div>
-                  <button type="submit" class="btn btn-primary mt-4">추가</button>
+                  <button type="submit" class="btn btn-primary mt-4">수정완료</button>
                 </form>
               </td>
             </tr>            
-          <% } %>
-        <%}%> <!-- if -->
-        <!-- 고객자료가 없으면 표시 -->
+          <% } 
+          }%> <!-- if --> 
+      </table>
+      <!-- 고객자료가 없으면 표시 -->
         <% if(userinfos.length == 0) {%> 
           <p>요청한 고객을 찾을 수 업습니다.</p>
-        <% } %>   
-      </table>
+        <% } %>  
 
     <!-- <h3 class="mt-5">정보입력</h3> -->
     <!-- 입력양식을 검증 추가: 필수입력, 전화번호 -->

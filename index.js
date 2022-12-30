@@ -111,7 +111,14 @@ app.get('/search', async function(req, res) {
 // 수정
 app.post('/updateuser/:id', async function(req, res) {
   console.log(req.params.id)
-  await Userinfos.update({
+  let { name, age, sex, contact } = req.body
+  let id = req.params.id
+  await Userinfos.update({ 
+    name: name, 
+    age: age, 
+    sex: sex, 
+    contact: contact
+  }, {
     where: { id: req.params.id }
   })
   res.redirect('/')
