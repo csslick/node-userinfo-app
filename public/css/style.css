@@ -36,5 +36,5 @@ input {
   display: block;
 }
 .update-form.show {
-  display: block;
+  display: table-row;
 }
